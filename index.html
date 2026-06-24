@@ -1,53 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FKPD — الرئيسية</title>
-  <link rel="icon" href="assets/icons/logo.png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KUKLOS-λ — نظام تشغيل مفتوح المصدر مبني على ديبيان، تطويره منظمة FKPD" />
+  <meta name="keywords" content="KUKLOS, FKPD, Linux, Debian, نظام تشغيل, مفتوح المصدر" />
+  <title>KUKLOS-λ — نظام التشغيل الحر</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" />
 </head>
-<body>
-  <div class="nebula"></div>
+<body lang="ar">
 
-  <header class="topbar">
-    <div class="top-right">
-      <button id="contactBtn" class="contact-trigger" aria-haspopup="true" aria-expanded="false">تواصل معنا ▾</button>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">Kλ</div>
+        <span class="nav-logo-text">KUKLOS-λ</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="#about" data-i18n="nav_about">عن النظام</a></li>
+        <li><a href="#download" data-i18n="nav_download">التحميل</a></li>
+        <li><a href="#docs" data-i18n="nav_docs">التوثيق</a></li>
+        <li>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="ar">AR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+          </div>
+        </li>
+      </ul>
+      <button class="hamburger" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <div id="contactPanel" class="contact-panel" aria-hidden="true">
-      <a class="contact-item" href="https://www.facebook.com/profile.php?id=61582579611736" target="_blank"><img src="assets/icons/fb.png" alt="Facebook"></a>
-      <a class="contact-item" href="https://t.me/+niHf1-YNgIZmMGRk" target="_blank"><img src="assets/icons/tg.png" alt="Telegram"></a>
-      <a class="contact-item disabled" href="#" aria-disabled="true"><img src="assets/icons/x.png" alt="X"></a>
-    </div>
-  </header>
-
-  <main class="hero">
+  <!-- HERO -->
+  <section id="hero" class="grid-bg">
+    <div class="hero-glow"></div>
     <div class="hero-inner">
-      <h1 class="site-title">
-        <span class="w-f">Foundational</span>
-        <span class="w-k">Kuklos</span>
-        <span class="w-p">Property</span>
-        <span class="w-d">Dictatorship</span>
-      </h1>
-
-      <div class="logo-wrap">
-        <img class="site-logo" src="assets/icons/logo.png" alt="شعار FKPD">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span data-i18n="hero_badge">v0.1 — إصدار تجريبي</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_before">KUKLOS-</span><span class="lambda">λ</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">نظام التشغيل الحر المستقبلي</p>
+        <p class="hero-desc" data-i18n="hero_desc">
+          نظام تشغيل مبني على ديبيان GNU/Linux، طوّرته منظمة FKPD لتوفير بيئة حوسبة آمنة، مستقرة، ومفتوحة المصدر للجميع.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-primary" data-i18n="btn_download">⬇ تحميل النظام</a>
+          <a href="#about" class="btn-secondary" data-i18n="btn_learn">اعرف أكثر</a>
+        </div>
       </div>
 
-      <article class="intro card">
-        <h2>أهداف المنظمة</h2>
-        <p>تأسست FKPD بتاريخ 1444/6/7 هـ. تهدف المنظمة إلى بناء قنوات تمويل ودعم تعمل عبر شبكات متعاونة لتحقيق أهداف استراتيجية محددة، بما في ذلك تمويل تنظيمات ثانية وأهداف دعم مؤسسات مرخصة.</p>
-      </article>
+      <div class="hero-emblem">
+        <!-- العلم: بعد إضافة flag.png احذف div.flag-placeholder وألغِ تعليق img -->
+        <div class="flag-container">
+          <!-- <img src="images/flag.png" alt="FKPD Flag" class="flag-img" /> -->
+          <div class="flag-placeholder" id="flag-placeholder">
+            <div class="stripe" style="background:#1a3a2a;"></div>
+            <div class="stripe" style="background:#d4d4d4;"></div>
+            <div class="stripe" style="background:#8b1a1a;"></div>
+          </div>
+          <p class="flag-label" data-i18n="flag_label">علم منظمة FKPD</p>
+        </div>
+        <div class="emblem-row">
+          <!-- شعار FKPD: بعد إضافة fkpd.png احذف span.logo-text وspan.logo-hint وألغِ تعليق img -->
+          <div class="logo-box" id="fkpd-logo-box">
+            <!-- <img src="images/fkpd.png" alt="FKPD Logo" /> -->
+            <span class="logo-text">FKPD</span>
+            <span class="logo-hint">fkpd.png</span>
+          </div>
+          <!-- شعار KUKLOS: بعد إضافة kuklos.png احذف span.logo-text وspan.logo-hint وألغِ تعليق img -->
+          <div class="logo-box" id="kuklos-logo-box">
+            <!-- <img src="images/kuklos.png" alt="KUKLOS Logo" /> -->
+            <span class="logo-text">Kλ</span>
+            <span class="logo-hint">kuklos.png</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">© FKPD — جميع الحقوق محفوظة</footer>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <p class="section-tag" data-i18n="about_tag">// عن النظام</p>
+      <h2 class="section-title" data-i18n="about_title">ما هو KUKLOS-λ؟</h2>
+      <div class="section-divider"></div>
+      <div class="about-grid">
+        <p class="about-text" data-i18n-html="about_text">
+          KUKLOS-λ هو نظام تشغيل مفتوح المصدر مبني على أساس ديبيان GNU/Linux. تموّله وتطوّره منظمة FKPD بهدف توفير منصة حوسبة آمنة، سريعة، ومستقرة للمستخدمين حول العالم.
+        </p>
+        <div class="specs-table">
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_base">القاعدة</span>
+            <span class="spec-value" data-i18n="spec_base_val">Debian GNU/Linux</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_dev">المطوّر</span>
+            <span class="spec-value" data-i18n="spec_dev_val">منظمة FKPD</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_type">النوع</span>
+            <span class="spec-value" data-i18n="spec_type_val">مفتوح المصدر</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_license">الترخيص</span>
+            <span class="spec-value" data-i18n="spec_license_val">GPL v3</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_arch">المعمارية</span>
+            <span class="spec-value" data-i18n="spec_arch_val">x86_64 / ARM64</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label" data-i18n="spec_status">الحالة</span>
+            <span class="spec-value" data-i18n="spec_status_val">قيد التطوير</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <audio id="snd-open" src="assets/sounds/open.wav" preload="auto"></audio>
-  <audio id="snd-hover" src="assets/sounds/hover.wav" preload="auto"></audio>
-  <audio id="snd-click" src="assets/sounds/click.wav" preload="auto"></audio>
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="section-inner">
+      <div class="dl-center">
+        <p class="section-tag" data-i18n="dl_tag">// التحميل</p>
+        <h2 class="section-title" data-i18n="dl_title">تحميل KUKLOS-λ</h2>
+        <p class="about-text" data-i18n="dl_desc">حمّل أحدث إصدار تجريبي وجرّب النظام بنفسك.</p>
+        <div class="dl-box">
+          <span class="dl-icon">💿</span>
+          <p class="dl-name" data-i18n="dl_name">KUKLOS-λ ISO Image</p>
+          <p class="dl-base" data-i18n="dl_base_label">مبني على Debian GNU/Linux</p>
+          <p class="dl-status" data-i18n="dl_status">// الإصدار التجريبي — قيد الإعداد</p>
+          <div class="dl-code-line" data-i18n="dl_code">$ wget https://example.com/kuklos-lambda.iso</div>
+          <!-- غيّر href="#" إلى رابط ISO الحقيقي عندما يصبح جاهزاً -->
+          <a href="#" class="btn-primary" style="display:block;text-align:center;" data-i18n="dl_btn">تحميل ملف ISO</a>
+          <p class="dl-note" data-i18n="dl_note">* سيتوفر ملف التحميل عند اكتمال الإصدار الرسمي</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- DOCS -->
+  <section id="docs" style="padding:80px 2rem; background: var(--bg2);">
+    <div class="section-inner">
+      <p class="section-tag">// docs</p>
+      <h2 class="section-title" data-i18n="docs_title">التوثيق</h2>
+      <div class="section-divider"></div>
+      <p class="about-text" data-i18n="docs_text">وثائق النظام وأدلة التثبيت ستكون متاحة قريباً.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">F</div>
+        <span>FKPD</span>
+      </div>
+      <span data-i18n="footer_right">© 2025 FKPD — جميع الحقوق محفوظة</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
